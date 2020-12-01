@@ -23,9 +23,14 @@ func Sum2020Part2(numbers []int) int {
 	for _, n := range numbers {
 		difference[2020-n] = n
 	}
-	for _, second := range numbers {
-		for _, third := range numbers {
-			first, ok := difference[second+third]
+	var (
+		i, first, second, third int
+		ok                      bool
+	)
+	for i, second = range numbers {
+		for j := i; j < len(numbers); j++ {
+			third = numbers[j]
+			first, ok = difference[second+third]
 			if ok {
 				return first * second * third
 			}

@@ -49,7 +49,7 @@ func TestSum2020Part2(t *testing.T) {
 		{
 			name:     "first case",
 			filePath: "./input.txt",
-			want:     514579,
+			want:     274879808,
 		},
 	}
 	for _, tt := range tests {
