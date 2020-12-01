@@ -16,8 +16,8 @@ func Sum2020Part1(numbers []int) int {
 	return 0
 }
 
-// Sum2020Part2 finds those two numbers whose sum is 2020.
-// returns the multiplication of those two numbers
+// Sum2020Part2 finds those three numbers whose sum is 2020.
+// returns the multiplication of those three numbers
 func Sum2020Part2(numbers []int) int {
 	difference := make(map[int]int)
 	for _, n := range numbers {
