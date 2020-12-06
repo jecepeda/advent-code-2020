@@ -68,7 +68,7 @@ func validHeight(p Passport) bool {
 		}
 		return height >= 150 && height <= 193
 	} else if strings.Contains(strHeight, "in") {
-		strHeight = strings.ReplaceAll(strHeight, "cm", "")
+		strHeight = strings.ReplaceAll(strHeight, "in", "")
 		height, err := strconv.Atoi(strHeight)
 		if err != nil {
 			return false

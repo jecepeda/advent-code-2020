@@ -22,7 +22,7 @@ func TestFirstPart(t *testing.T) {
 		{
 			name: "real part 1",
 			path: "./input.txt",
-			want: 164,
+			want: 192,
 		},
 	}
 	for _, tt := range tests {
