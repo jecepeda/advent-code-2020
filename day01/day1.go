@@ -1,4 +1,4 @@
-package day1
+package day01
 
 // Sum2020Part1 finds those two numbers whose sum is 2020.
 // returns the multiplication of those two numbers

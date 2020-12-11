@@ -1,4 +1,4 @@
-package day5
+package day05
 
 // BoardingPass is the binary-space partitioning
 // pass used to know where you should seat

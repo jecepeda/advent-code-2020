@@ -1,24 +1,11 @@
-package day7
+package day03
 
 import (
 	"testing"
 
 	"github.com/jecepeda/advent-code-2020/util"
-	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
-
-func TestBagMatcher(t *testing.T) {
-	b, err := NewBagMatcher()
-	require.NoError(t, err)
-	line := "light red bags contain 1 bright white bag, 2 muted yellow bags."
-	color := b.GetBagColor(line)
-	assert.Equal(t, "light red", color)
-	assert.True(t, b.HasBags(line))
-	matches, err := b.GetBagsContained(line)
-	require.NoError(t, err)
-	require.Len(t, matches, 2)
-}
 
 func TestFirstPart(t *testing.T) {
 	tests := []struct {
@@ -27,23 +14,23 @@ func TestFirstPart(t *testing.T) {
 		want int
 	}{
 		{
-			name: "test",
+			name: "test case",
 			path: "./test.txt",
-			want: 4,
+			want: 7,
 		},
 		{
-			name: "input",
+			name: "real part 1",
 			path: "./input.txt",
-			want: 144,
+			want: 164,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			lines, err := util.ReadFile(tt.path)
 			require.NoError(t, err)
-			got, err := FirstPart(lines)
-			require.NoError(t, err)
-			require.Equal(t, tt.want, got)
+			if got := FirstPart(lines); got != tt.want {
+				t.Errorf("FirstPart() = %v, want %v", got, tt.want)
+			}
 		})
 	}
 }
@@ -55,23 +42,23 @@ func TestSecondPart(t *testing.T) {
 		want int
 	}{
 		{
-			name: "test",
+			name: "test case",
 			path: "./test.txt",
-			want: 32,
+			want: 336,
 		},
 		{
-			name: "input",
+			name: "real part 1",
 			path: "./input.txt",
-			want: 5956,
+			want: 5007658656,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			lines, err := util.ReadFile(tt.path)
 			require.NoError(t, err)
-			got, err := SecondPart(lines)
-			require.NoError(t, err)
-			require.Equal(t, tt.want, got)
+			if got := SecondPart(lines); got != tt.want {
+				t.Errorf("SecondPart() = %v, want %v", got, tt.want)
+			}
 		})
 	}
 }

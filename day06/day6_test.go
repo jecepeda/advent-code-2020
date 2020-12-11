@@ -1,4 +1,4 @@
-package day3
+package day06
 
 import (
 	"testing"
@@ -14,14 +14,14 @@ func TestFirstPart(t *testing.T) {
 		want int
 	}{
 		{
-			name: "test case",
+			name: "test",
 			path: "./test.txt",
-			want: 7,
+			want: 11,
 		},
 		{
-			name: "real part 1",
+			name: "input",
 			path: "./input.txt",
-			want: 164,
+			want: 6161,
 		},
 	}
 	for _, tt := range tests {
@@ -42,14 +42,14 @@ func TestSecondPart(t *testing.T) {
 		want int
 	}{
 		{
-			name: "test case",
+			name: "test",
 			path: "./test.txt",
-			want: 336,
+			want: 6,
 		},
 		{
-			name: "real part 1",
+			name: "input",
 			path: "./input.txt",
-			want: 5007658656,
+			want: 2971,
 		},
 	}
 	for _, tt := range tests {
@@ -57,7 +57,7 @@ func TestSecondPart(t *testing.T) {
 			lines, err := util.ReadFile(tt.path)
 			require.NoError(t, err)
 			if got := SecondPart(lines); got != tt.want {
-				t.Errorf("SecondPart() = %v, want %v", got, tt.want)
+				t.Errorf("FirstPart() = %v, want %v", got, tt.want)
 			}
 		})
 	}

@@ -1,4 +1,4 @@
-package day6
+package day06
 
 // CustomDeclarationForm is the survey made to the passengers' groups
 // when arriving to the destination

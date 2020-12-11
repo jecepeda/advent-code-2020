@@ -1,11 +1,24 @@
-package day8
+package day07
 
 import (
 	"testing"
 
 	"github.com/jecepeda/advent-code-2020/util"
+	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
+
+func TestBagMatcher(t *testing.T) {
+	b, err := NewBagMatcher()
+	require.NoError(t, err)
+	line := "light red bags contain 1 bright white bag, 2 muted yellow bags."
+	color := b.GetBagColor(line)
+	assert.Equal(t, "light red", color)
+	assert.True(t, b.HasBags(line))
+	matches, err := b.GetBagsContained(line)
+	require.NoError(t, err)
+	require.Len(t, matches, 2)
+}
 
 func TestFirstPart(t *testing.T) {
 	tests := []struct {
@@ -16,12 +29,12 @@ func TestFirstPart(t *testing.T) {
 		{
 			name: "test",
 			path: "./test.txt",
-			want: 5,
+			want: 4,
 		},
 		{
 			name: "input",
 			path: "./input.txt",
-			want: 2051,
+			want: 144,
 		},
 	}
 	for _, tt := range tests {
@@ -44,12 +57,12 @@ func TestSecondPart(t *testing.T) {
 		{
 			name: "test",
 			path: "./test.txt",
-			want: 8,
+			want: 32,
 		},
 		{
 			name: "input",
 			path: "./input.txt",
-			want: 2304,
+			want: 5956,
 		},
 	}
 	for _, tt := range tests {

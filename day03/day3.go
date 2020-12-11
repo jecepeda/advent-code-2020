@@ -1,4 +1,4 @@
-package day3
+package day03
 
 // FirstPart checks the number of trees that are found in
 // our way
