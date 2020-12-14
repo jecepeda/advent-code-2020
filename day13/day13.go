@@ -55,7 +55,7 @@ func SecondPart(lines []string) (int, error) {
 }
 
 func chineseRemainderTheorem(nums, remainders []int) int {
-	prod := greatestCommonDivisor(nums)
+	prod := product(nums)
 	inv := make([]int, len(nums))
 	pp := make([]int, len(nums))
 	for i := range nums {
@@ -73,7 +73,7 @@ func modInverse(a, m int) int {
 	return int(big.NewInt(0).ModInverse(big.NewInt(int64(a)), big.NewInt(int64(m))).Int64())
 }
 
-func greatestCommonDivisor(nums []int) int {
+func product(nums []int) int {
 	var res = nums[0]
 	for i := 1; i < len(nums); i++ {
 		res *= nums[i]
