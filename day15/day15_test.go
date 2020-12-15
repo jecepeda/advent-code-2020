@@ -91,6 +91,7 @@ func TestSpokenNumbersSecondPart(t *testing.T) {
 		firstNumbers []int
 		turns        int
 	}
+	thirtyMillion := 30_000_000
 	tests := []struct {
 		name string
 		args args
@@ -100,7 +101,7 @@ func TestSpokenNumbersSecondPart(t *testing.T) {
 			name: "example 1",
 			args: args{
 				firstNumbers: []int{0, 3, 6},
-				turns:        30000000,
+				turns:        thirtyMillion,
 			},
 			want: 175594,
 		},
@@ -108,7 +109,7 @@ func TestSpokenNumbersSecondPart(t *testing.T) {
 			name: "example 2",
 			args: args{
 				firstNumbers: []int{1, 3, 2},
-				turns:        30000000,
+				turns:        thirtyMillion,
 			},
 			want: 2578,
 		},
@@ -116,7 +117,7 @@ func TestSpokenNumbersSecondPart(t *testing.T) {
 			name: "example 3",
 			args: args{
 				firstNumbers: []int{2, 1, 3},
-				turns:        30000000,
+				turns:        thirtyMillion,
 			},
 			want: 3544142,
 		},
@@ -124,7 +125,7 @@ func TestSpokenNumbersSecondPart(t *testing.T) {
 			name: "example 4",
 			args: args{
 				firstNumbers: []int{1, 2, 3},
-				turns:        30000000,
+				turns:        thirtyMillion,
 			},
 			want: 261214,
 		},
@@ -132,7 +133,7 @@ func TestSpokenNumbersSecondPart(t *testing.T) {
 			name: "example 5",
 			args: args{
 				firstNumbers: []int{2, 3, 1},
-				turns:        30000000,
+				turns:        thirtyMillion,
 			},
 			want: 6895259,
 		},
@@ -140,7 +141,7 @@ func TestSpokenNumbersSecondPart(t *testing.T) {
 			name: "example 6",
 			args: args{
 				firstNumbers: []int{3, 2, 1},
-				turns:        30000000,
+				turns:        thirtyMillion,
 			},
 			want: 18,
 		},
@@ -148,7 +149,7 @@ func TestSpokenNumbersSecondPart(t *testing.T) {
 			name: "example 7",
 			args: args{
 				firstNumbers: []int{3, 1, 2},
-				turns:        30000000,
+				turns:        thirtyMillion,
 			},
 			want: 362,
 		},
@@ -156,7 +157,7 @@ func TestSpokenNumbersSecondPart(t *testing.T) {
 			name: "input case",
 			args: args{
 				firstNumbers: []int{0, 14, 1, 3, 7, 9},
-				turns:        30000000,
+				turns:        thirtyMillion,
 			},
 			want: 1876406,
 		},
