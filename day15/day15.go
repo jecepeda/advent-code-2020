@@ -35,9 +35,13 @@ func SpokenNumbers(firstNumbers []int, turns int) int {
 func EfficientSpokenNumbers(firstNumbers []int, turns int) int {
 	a := make([]int, turns) // all zero by default
 	copy(a, firstNumbers)
-	seen := make(map[int]int)
+	var (
+		seen = make(map[int]int)
+		m    int
+		ok   bool
+	)
 	for n := 0; n < turns-1; n++ {
-		if m, ok := seen[a[n]]; ok {
+		if m, ok = seen[a[n]]; ok {
 			a[n+1] = n - m
 		}
 		seen[a[n]] = n
