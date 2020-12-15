@@ -163,6 +163,7 @@ func TestSpokenNumbersSecondPart(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
 			if got := EfficientSpokenNumbers(tt.args.firstNumbers, tt.args.turns); got != tt.want {
 				t.Errorf("SecondPart: SpokenNumbers() = %v, want %v", got, tt.want)
 			}
