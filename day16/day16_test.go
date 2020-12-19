@@ -45,7 +45,7 @@ func TestSecondPart(t *testing.T) {
 		{
 			name:    "test",
 			path:    "./test.txt",
-			want:    14,
+			want:    1,
 			keyword: "seat",
 		},
 		{
