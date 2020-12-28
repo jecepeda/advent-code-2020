@@ -10,10 +10,9 @@ import (
 
 func TestFirstPart(t *testing.T) {
 	tests := []struct {
-		name   string
-		path   string
-		rounds int
-		want   int
+		name string
+		path string
+		want int
 	}{
 		{
 			name: "test",
@@ -41,10 +40,9 @@ func TestFirstPart(t *testing.T) {
 
 func TestSecondPart(t *testing.T) {
 	tests := []struct {
-		name   string
-		path   string
-		rounds int
-		want   int
+		name string
+		path string
+		want int
 	}{
 		{
 			name: "test",
