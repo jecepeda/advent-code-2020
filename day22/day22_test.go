@@ -1,9 +1,10 @@
-package day21
+package day22
 
 import (
 	"testing"
 
 	"github.com/jecepeda/advent-code-2020/util"
+
 	"github.com/stretchr/testify/require"
 )
 
@@ -16,12 +17,12 @@ func TestFirstPart(t *testing.T) {
 		{
 			name: "test",
 			path: "./test.txt",
-			want: 5,
+			want: 306,
 		},
 		{
 			name: "input",
 			path: "./input.txt",
-			want: 2724,
+			want: 34324,
 		},
 	}
 	for _, tt := range tests {
@@ -30,7 +31,8 @@ func TestFirstPart(t *testing.T) {
 			t.Parallel()
 			lines, err := util.ReadFile(tr.path)
 			require.NoError(t, err)
-			got := FirstPart(lines)
+			got, err := FirstPart(lines)
+			require.NoError(t, err)
 			require.Equal(t, tr.want, got)
 		})
 	}
@@ -40,17 +42,17 @@ func TestSecondPart(t *testing.T) {
 	tests := []struct {
 		name string
 		path string
-		want string
+		want int
 	}{
 		{
 			name: "test",
 			path: "./test.txt",
-			want: "mxmxvkd,sqjhc,fvjkl",
+			want: 291,
 		},
 		{
 			name: "input",
 			path: "./input.txt",
-			want: "xlxknk,cskbmx,cjdmk,bmhn,jrmr,tzxcmr,fmgxh,fxzh",
+			want: 33259,
 		},
 	}
 	for _, tt := range tests {
@@ -59,8 +61,14 @@ func TestSecondPart(t *testing.T) {
 			t.Parallel()
 			lines, err := util.ReadFile(tr.path)
 			require.NoError(t, err)
-			got := SecondPart(lines)
+			got, err := SecondPart(lines)
+			require.NoError(t, err)
 			require.Equal(t, tr.want, got)
 		})
 	}
+}
+
+func TestRecursiveCombat(t *testing.T) {
+	got, _ := playRecursiveCombat([]int{43, 19}, []int{2, 29, 14})
+	require.Equal(t, 1, got)
 }
